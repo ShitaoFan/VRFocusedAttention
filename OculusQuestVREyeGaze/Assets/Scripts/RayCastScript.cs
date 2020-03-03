@@ -20,7 +20,10 @@ public class RayCastScript : MonoBehaviour
         ray = new Ray(transform.position, transform.forward);
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
+            if (hit.collider.gameObject.tag=="Object")
+            {
             Debug.Log(hit.collider.name);
+            }
         }
 
         Debug.DrawRay(transform.position,transform.forward*1000.0f,Color.red);
